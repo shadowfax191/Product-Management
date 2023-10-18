@@ -16,6 +16,8 @@ import Register from './components/Register';
 import AuthProdiver from './components/AuthProvider/AuthProdiver';
 import PrivateRoute from './components/PrivateRoute';
 import CollectionCard from './components/CollectionCard';
+import Details from './components/Details';
+import UpdateData from './components/UpdateData';
 
 const router = createBrowserRouter([
   {
@@ -35,6 +37,7 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute> ,
+        loader:()=> fetch('http://localhost:5000/cartId'),
         
       },
       {
@@ -50,6 +53,16 @@ const router = createBrowserRouter([
       {
         path: "/collection/:title",
         element: <CollectionCard></CollectionCard>,
+      },
+      {
+        path: "/details/:id",
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader:()=> fetch('http://localhost:5000/users'),
+      },
+      {
+        path: "/update/:id",
+        element: <PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
+        loader:({params})=> fetch(`http://localhost:5000/users/${params.id}`),
       }
     ]
   },

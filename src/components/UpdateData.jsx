@@ -1,7 +1,10 @@
+import { useLoaderData } from "react-router-dom";
 
-const AddProduct = () => {
 
-    const handleSubmit = (e) => {
+const UpdateData = () => {
+    const data = useLoaderData()
+     
+    const handleUpdate=(e)=>{
         e.preventDefault()
         const name = e.target.name.value
         const photo = e.target.photo.value
@@ -10,28 +13,29 @@ const AddProduct = () => {
         const rating = e.target.rating.value
          const brandName= e.target.select.value
          const description=e.target.description.value
-
-
        const myData={name, photo, type, price, rating,brandName,description};
-        console.log(myData);
-        fetch('http://localhost:5000/users',{
-            method:"POST",
-            headers:{
-                "content-Type":'application/json'
-            },
-            body:JSON.stringify(myData)
+       
+       fetch(`http://localhost:5000/users/${data._id}`,{
+        method:'PUT',
+        headers:{
+            "content-Type":'application/json'
+        },
+        body:JSON.stringify(myData)
 
-        })
-        .then(res =>res.json())
-        .then(data=>{
-            console.log(data);
-        })
+    })
+    .then(res =>res.json())
+    .then(data=>{
+        console.log(data);
+    })
 
 
     }
+
+
+   
     return (
         <div>
-            <form onSubmit={handleSubmit} className="  max-w-3xl mx-auto my-3 md:my-20 p-5 lg:p-10 space-y-10 bg-primary-content rounded-xl">
+             <form onSubmit={handleUpdate} className="  max-w-3xl mx-auto my-3 md:my-20 p-5 lg:p-10 space-y-10 bg-primary-content rounded-xl">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="form-control">
                         <label className="label">
@@ -39,7 +43,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Name</span>
-                            <input type="text" placeholder="name" className="input input-bordered" name="name" required />
+                            <input type="text" defaultValue={data?.name} placeholder="name" className="input input-bordered" name="name" required />
                         </label>
                     </div>
                     <div className="form-control">
@@ -48,7 +52,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Image</span>
-                            <input type="text" placeholder="photo URL" name="photo" className="input input-bordered" required />
+                            <input type="text" defaultValue={data?.photo} placeholder="photo URL" name="photo" className="input input-bordered" required />
                         </label>
                     </div>
                 </div>
@@ -61,7 +65,7 @@ const AddProduct = () => {
                             <span>Brand Name</span>
                             <div className="form-control rounded-none">
                                 <div className="input-group rounded-none">
-                                    <select required name="select" className="select select-bordered rounded-none">
+                                    <select defaultValue={data?.select} required name="select" className="select select-bordered rounded-none">
                                         <option >Disney</option>
                                         <option>Netflix</option>
                                         <option>Warner Bros.</option>
@@ -79,7 +83,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Type</span>
-                            <input type="text" placeholder="Type" name="type" className="input input-bordered" required />
+                            <input type="text" defaultValue={data?.type} placeholder="Type" name="type" className="input input-bordered" required />
                         </label>
                     </div>
                 </div>
@@ -90,7 +94,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>price</span>
-                            <input type="text" placeholder="price" className="input input-bordered" name="price" required />
+                            <input type="text" defaultValue={data?.price} placeholder="price" className="input input-bordered" name="price" required />
                         </label>
                     </div>
                     <div className="form-control">
@@ -99,7 +103,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Rating</span>
-                            <input type="number" placeholder="rating" name="rating" className="input input-bordered" min={0} max={5} required />
+                            <input type="number" defaultValue={data?.rating} placeholder="rating" name="rating" className="input input-bordered" min={0} max={5} required />
                         </label>
                     </div>
                 </div>
@@ -110,12 +114,12 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Description</span>
-                            <input type="text" placeholder="Description" name="description" className="input input-bordered w-full h-40" required />
+                            <input type="text" defaultValue={data?.description} placeholder="Description" name="description" className="input input-bordered w-full h-40" required />
                         </label>
 
                     </div>
                 </div>
-                <input type="submit" value='Add Product' className="w-full btn btn-primary" />
+                <input type="submit" value='Update Product' className="w-full btn btn-primary" />
 
 
             </form>
@@ -123,4 +127,4 @@ const AddProduct = () => {
     );
 };
 
-export default AddProduct;
+export default UpdateData;
