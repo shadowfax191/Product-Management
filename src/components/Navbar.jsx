@@ -32,7 +32,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <img className="w-24 rounded-full" src="https://i.ibb.co/fNtnpGX/1918.png" alt="" />
-                    <p className="text-4xl hidden md:flex font-semibold pl-4">Entertainment</p>
+                    <p className="text-3xl hidden md:flex font-semibold pl-4">Happy Hour Delights</p>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1 text-lg">

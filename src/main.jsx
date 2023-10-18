@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Register from './components/Register';
 import AuthProdiver from './components/AuthProvider/AuthProdiver';
 import PrivateRoute from './components/PrivateRoute';
+import CollectionCard from './components/CollectionCard';
 
 const router = createBrowserRouter([
   {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
         path: "/register",
         element: <Register></Register>,
         
+      },
+      {
+        path: "/collection/:title",
+        element: <CollectionCard></CollectionCard>,
       }
     ]
   },

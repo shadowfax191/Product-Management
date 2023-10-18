@@ -1,0 +1,32 @@
+[
+    {
+      "id": 1,
+      "title": "Disney",
+      "image": "https://i.ibb.co/FV3tWqr/share-default-14fadd993578b9916f855cebafb71e62.png"
+    },
+    {
+      "id": 2,
+      "title": "Netflix",
+      "image": "https://i.ibb.co/HVq3xbK/05c-It-XL96l4-LE9n02-Wf-DR0h-5.webp"
+    },
+    {
+      "id": 3,
+      "title": "Warner Bros.",
+      "image": "https://i.ibb.co/yp43CT9/warner-bros-new-logo-designboom-01.webp"
+    },
+    {
+      "id": 4,
+      "title": "Sony Pictures",
+      "image": "https://i.ibb.co/kKvSv8Q/sony-pictures.webp"
+    },
+    {
+      "id": 5,
+      "title": "Spotify",
+      "image": "https://i.ibb.co/KsHF3tr/spotify-logo-1920x1080-2.webp"
+    },
+    {
+      "id": 6,
+      "title": "Amazon Prime",
+      "image": "https://i.ibb.co/VgMVdt0/amazon-prime-lite-subscription-in-india-for.png"
+    }
+  ]
