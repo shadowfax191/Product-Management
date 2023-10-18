@@ -3,7 +3,7 @@
 const Banner = () => {
     return (
         <div>
-            <div className=" bg-base-200 my-10 md:my-20 p-3 md:p-5 lg:p-0">
+            <div className=" my-10 md:my-20 p-3 md:p-5 lg:p-0">
   <div className="hero flex flex-col lg:flex-row-reverse items-center">
     <div className="flex-1">
     <img src="https://i.ibb.co/BjrYQHT/OTTApp-Builders-1585296767860.jpg" className="  rounded-lg shadow-2xl" />

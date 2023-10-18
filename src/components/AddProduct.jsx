@@ -11,13 +11,27 @@ const AddProduct = () => {
          const brandName= e.target.select.value
 
 
-        console.log(name, photo, type, price, rating,brandName);
+       const myData={name, photo, type, price, rating,brandName};
+        console.log(myData);
+
+        fetch('http://localhost:5000/users',{
+            method:"POST",
+            headers:{
+                "content-Type":'application/json'
+            },
+            body:JSON.stringify(myData)
+
+        })
+        .then(res =>res.json())
+        .then(data=>{
+            console.log(data);
+        })
 
 
     }
     return (
         <div>
-            <form onSubmit={handleSubmit} className="max-w-3xl mx-auto my-3 md:my-20 p-5 lg:p-10 space-y-10 bg-primary-content rounded-xl">
+            <form onSubmit={handleSubmit} className="  max-w-3xl mx-auto my-3 md:my-20 p-5 lg:p-10 space-y-10 bg-primary-content rounded-xl">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="form-control">
                         <label className="label">
@@ -85,7 +99,7 @@ const AddProduct = () => {
                         </label>
                         <label className="input-group">
                             <span>Rating</span>
-                            <input type="number" placeholder="rating" name="rating" className="input input-bordered" required />
+                            <input type="number" placeholder="rating" name="rating" className="input input-bordered" min={0} max={5} required />
                         </label>
                     </div>
                 </div>
