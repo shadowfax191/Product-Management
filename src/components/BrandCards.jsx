@@ -6,7 +6,7 @@ const BrandCards = () => {
     const [brands, setBrands] = useState([])
 
     useEffect(() => {
-        fetch('/data.json')
+        fetch('/BrandName.json')
             .then(res => res.json())
             .then(data => setBrands(data))
     }, [])

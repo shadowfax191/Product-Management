@@ -67,17 +67,12 @@ window.location.reload()
                                 </div>
 
                                 <div className="rating rating-md flex justify-end px-6">
-
-
                                     {
                                         [1, 2, 3, 4, 5].map((a, index) => (
                                             <input key={index} type="radio" name={`rating-${cart?._id}`} className="mask mask-star-2 bg-primary " checked={a <= cart?.rating} readOnly />
                                         ))
                                     }
-
                                 </div>
-
-
                                 <div className="card-actions justify-end pt-4">
                                     <button onClick={() => handleDelete(cart?._id)} className="btn btn-primary">Delete</button>
                                 </div>
