@@ -19,7 +19,7 @@ const BrandCards = () => {
                     brands.map((brand) =>
                         <div key={brand.id} >
                             <Link to={`/collection/${brand.title}`}>
-                                <div className="card bg-base-100 shadow-2xl shadow-primary-focus ">
+                                <div className="card bg-base-100 shadow-2xl shadow-primary-content ">
                                     <figure><img src={brand.image} className="h-60 w-full" alt="" /></figure>
                                     <div className="card-body">
                                         <h2 className="card-title text-2xl">{brand.title}</h2>

@@ -38,12 +38,12 @@ const AddProduct = () => {
         })
     }
     return (
-        <div>
-            <form onSubmit={handleSubmit} className="  max-w-3xl mx-auto my-3 md:my-20 p-5 lg:p-10 space-y-10 bg-primary-content rounded-xl">
+        <div >
+            <form onSubmit={handleSubmit} className="  max-w-3xl mx-auto my-3 md:my-5 p-5 lg:p-10 space-y-10 bg-gray-600  rounded-xl">
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Name</span>
+                            <span className="label-text text-white">Name</span>
                         </label>
                         <label className="input-group">
                             <span>Name</span>
@@ -52,7 +52,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Image</span>
+                            <span className="label-text text-white">Image</span>
                         </label>
                         <label className="input-group">
                             <span>Image</span>
@@ -63,7 +63,7 @@ const AddProduct = () => {
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Brands Name</span>
+                            <span className="label-text text-white">Brands Name</span>
                         </label>
                         <label className="input-group">
                             <span>Brand Name</span>
@@ -83,7 +83,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Type</span>
+                            <span className="label-text text-white">Type</span>
                         </label>
                         <label className="input-group">
                             <span>Type</span>
@@ -94,7 +94,7 @@ const AddProduct = () => {
                 <div className="flex flex-col md:flex-row justify-between">
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Price</span>
+                            <span className="label-text text-white">Price</span>
                         </label>
                         <label className="input-group">
                             <span>price</span>
@@ -103,7 +103,7 @@ const AddProduct = () => {
                     </div>
                     <div className="form-control">
                         <label className="label">
-                            <span className="label-text">Rating</span>
+                            <span className="label-text text-white">Rating</span>
                         </label>
                         <label className="input-group">
                             <span>Rating</span>
@@ -114,7 +114,7 @@ const AddProduct = () => {
                 <div className="">
                     <div className="">
                         <label className="">
-                            <span className="label-text">Description</span>
+                            <span className="label-text text-white">Description</span>
                         </label>
                         <label className="input-group">
                             <span>Description</span>

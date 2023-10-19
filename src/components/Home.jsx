@@ -7,7 +7,7 @@ import Top from "./Top";
 
 const Home = () => {
     return (
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-7xl mx-auto " >
            <Banner></Banner>
            <BrandCards></BrandCards>
            <Questions></Questions>

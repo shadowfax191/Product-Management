@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext} from "react";
 import { NavLink } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProdiver";
 import toast, { Toaster } from "react-hot-toast";
@@ -6,7 +6,6 @@ import toast, { Toaster } from "react-hot-toast";
 const Navbar = () => {
 
     const { user, logOut } = useContext(AuthContext)
-    console.log(user);
     const handleLogOut = () => {
         logOut()
             .then(res => {
