@@ -16,7 +16,7 @@ const UpdateData = () => {
          const description=e.target.description.value
        const myData={name, photo, type, price, rating,brandName,description};
        
-       fetch(`http://localhost:5000/users/${data._id}`,{
+       fetch(`https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users/${data._id}`,{
         method:'PUT',
         headers:{
             "content-Type":'application/json'

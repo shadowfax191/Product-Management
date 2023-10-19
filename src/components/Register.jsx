@@ -73,7 +73,7 @@ const Register = () => {
 
     return (
             <div>
-                <div className="hero max-w-5xl mx-auto    bg-base-200">
+                <div className="hero max-w-5xl mx-auto  md:py-10">
                     <div className="hero-content w-full">
                        
                         <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">

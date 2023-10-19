@@ -2,7 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProdiver";
 import toast, { Toaster } from "react-hot-toast";
-
+import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
 
     const { signIn, signInWithGoogle } = useContext(AuthContext)
@@ -71,7 +71,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="hero max-w-5xl mx-auto  md:py-10 bg-base-200">
+            <div className="hero max-w-5xl mx-auto  md:py-10">
                 <div className="hero-content w-full">
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
@@ -99,9 +99,9 @@ const Login = () => {
                         </form>
                         <div className="px-8">
                             <p>Do not have an account? <Link to='/register' className="text-purple-700 text-center font-medium">Register here</Link> </p>
-                            <p className="text-2xl text-purple-700 text-center font-semibold">OR</p>
+                            <p className="text-xl text-purple-700 text-center font-semibold">OR</p>
                             <div className="form-control my-4 ">
-                                <button onClick={handleGoogle} className="btn btn-primary">google</button>
+                                <button onClick={handleGoogle} className="btn btn-primary text-2xl"> <FcGoogle></FcGoogle> </button>
                             </div>
                         </div>
                     </div>

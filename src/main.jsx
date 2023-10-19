@@ -39,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/myCart",
         element: <PrivateRoute><MyCart></MyCart></PrivateRoute> ,
-        loader:()=> fetch('http://localhost:5000/cartId'),
+        loader:()=> fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/cartId'),
         
       },
       {
@@ -59,12 +59,12 @@ const router = createBrowserRouter([
       {
         path: "/details/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader:()=> fetch('http://localhost:5000/users'),
+        loader:()=> fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users'),
       },
       {
         path: "/update/:id",
         element: <PrivateRoute><UpdateData></UpdateData></PrivateRoute>,
-        loader:({params})=> fetch(`http://localhost:5000/users/${params.id}`),
+        loader:({params})=> fetch(`https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users/${params.id}`),
       }
     ]
   },

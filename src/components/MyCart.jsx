@@ -12,7 +12,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/users')
+        fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setCollecTion(data);
@@ -33,7 +33,7 @@ const MyCart = () => {
     const handleDelete = (id) => {
         const backCart = data.find((collect) => collect.cartId == id)
         const newId = backCart._id
-        fetch(`http://localhost:5000/cartId/${newId}`, {
+        fetch(`https://express-assignment-amf845f8c-shadowfax12385.vercel.app/cartId/${newId}`, {
             method: "DELETE",
 
         })
@@ -80,13 +80,7 @@ const MyCart = () => {
                                         <p className="font-bold text-primary">Price: ${cart?.price}</p>
                                     </div>
 
-                                    <div className="rating rating-md flex justify-end px-6">
-                                        {
-                                            [1, 2, 3, 4, 5].map((a, index) => (
-                                                <input key={index} type="radio" name={`rating-${cart?._id}`} className="mask mask-star-2 bg-primary " checked={a <= cart?.rating} readOnly />
-                                            ))
-                                        }
-                                    </div>
+                                
                                     <div className="card-actions justify-end pt-4">
                                         <button onClick={() => handleDelete(cart?._id)} className="btn btn-primary">Delete</button>
                                     </div>
