@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 import { useLoaderData } from "react-router-dom";
 
 
@@ -25,7 +26,16 @@ const UpdateData = () => {
     })
     .then(res =>res.json())
     .then(data=>{
-        console.log(data);
+        if(data.acknowledged){
+            toast.success('Successfully Updated to Database',{
+                style: {
+                  borderRadius: '10px',
+                  background: '#333',
+                  color: '#fff',
+                  padding:'10px'
+                },
+              })
+        }
     })
 
 
@@ -123,6 +133,8 @@ const UpdateData = () => {
 
 
             </form>
+            <Toaster  position="top-right"
+  reverseOrder={false}></Toaster>
         </div>
     );
 };

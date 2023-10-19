@@ -1,3 +1,4 @@
+import toast, { Toaster } from "react-hot-toast";
 
 const AddProduct = () => {
 
@@ -24,10 +25,17 @@ const AddProduct = () => {
         })
         .then(res =>res.json())
         .then(data=>{
-            console.log(data);
+            if(data.acknowledged){
+                toast.success('Successfully Added to Database',{
+                    style: {
+                      borderRadius: '10px',
+                      background: '#333',
+                      color: '#fff',
+                      padding:'10px'
+                    },
+                  })
+            }
         })
-
-
     }
     return (
         <div>
@@ -116,9 +124,9 @@ const AddProduct = () => {
                     </div>
                 </div>
                 <input type="submit" value='Add Product' className="w-full btn btn-primary" />
-
-
             </form>
+            <Toaster  position="top-right"
+  reverseOrder={false}></Toaster>
         </div>
     );
 };

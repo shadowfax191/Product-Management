@@ -1,6 +1,8 @@
 import { useContext, useState } from "react";
 import { useLoaderData, useParams } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProdiver";
+import toast, { Toaster } from "react-hot-toast";
+
 
 const Details = () => {
     const data = useLoaderData([])
@@ -11,7 +13,6 @@ const Details = () => {
     const {user}=useContext(AuthContext)
    
     const [counts,setCount]=useState(1)
-    console.log(counts);
     const cartId = { cartId: id,userId: user.uid}
     const handleCart = () => {
        
@@ -26,19 +27,32 @@ const Details = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                if(data.acknowledged){
+                    toast.success('Successfully Added to Cart',{
+                        style: {
+                          borderRadius: '10px',
+                          background: '#333',
+                          color: '#fff',
+                          padding:'10px'
+                        },
+                      })
+                }
             })
         }
         else if(counts>=2){
-        alert('error')
+            toast.error("Already Added.",{
+                style: {
+                  borderRadius: '10px',
+                  background: '#FF0',
+                  color: '#000',
+                  padding:'10px',
+                  textAlign:'center',
+                  margin:'auto'
+                },
+              })
         }
         setCount(counts+1)
     }
-
- 
-
-
-
 
     return (
         <div>
@@ -73,6 +87,8 @@ const Details = () => {
                     </div>
                 </div>
             }
+            <Toaster position="top-right"
+  reverseOrder={false}></Toaster>
         </div>
     );
 };
