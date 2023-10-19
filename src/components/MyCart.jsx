@@ -63,6 +63,7 @@ const MyCart = () => {
                 CartInfo.length ? <h2 className="text-4xl font-bold pt-10 text-center text-primary">your Selected Items</h2> :
                     <div>
                         <p className="text-center text-2xl md:text-8xl text-primary font-bold py-10 md:py-20 ">Your Cart is Empty</p>
+                        <p className="text-center text-xl text-primary pb-10">Add to cart to see Your Selected Product</p>
                     </div>
             }
             <div className="grid grid-cols-1 md:grid-cols-3 max-w-7xl mx-auto py-10 md:py-20">

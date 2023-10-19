@@ -1,10 +1,15 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProdiver";
+import toast, { Toaster } from "react-hot-toast";
+import auth from "./Firebase/firebase";
+import { updateProfile } from "firebase/auth";
 
 const Register = () => {
 
     const {createUser}=useContext(AuthContext)
+
+    // const [error,setError]=useState(null)
 
 
     const handleSubmit=(e)=>{
@@ -14,13 +19,55 @@ const Register = () => {
         const name=e.target.name.value
         const photo=e.target.photo.value
         console.log(email,password,name,photo);
-        createUser(email,password)
-        .then(res=>{
-            console.log(res);
-        })
-        .catch(err=>{
-            console.log(err);
-        })
+
+        // setError('')
+        if(/^(?=.*[A-Za-z])(?=.*[A-Z])(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{6,}$/.test(password)){
+           
+            createUser(email,password)
+            .then(res=>{
+               if(res.user.uid){
+                toast.success('Successfully Registration Complete ',
+                {
+                  style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                  },
+                })
+               }
+               const user =auth.currentUser
+               if(user){
+                return updateProfile(user,{
+                    displayName:name,
+                    photoURL:photo
+                })
+               }
+
+            })
+            .catch(err=>{
+                console.log(err);
+               toast.error(err.message ,
+                {
+                  style: {
+                    borderRadius: '10px',
+                    background: '#FF0',
+                    color: '#333',
+                  },
+                });
+            })
+        }
+        else{
+            toast.error('Password should contain 1 upper case,1 special character and at least 6 character',
+            {
+ 
+              style: {
+                borderRadius: '10px',
+                background: '#FF0',
+                color: '#333',
+              },
+            })
+        }
+        
     }
 
 
@@ -70,6 +117,7 @@ const Register = () => {
                         </div>
                     </div>
                 </div>
+                <Toaster ></Toaster>
             </div>
         
     );

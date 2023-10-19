@@ -1,13 +1,14 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider/AuthProdiver";
+import toast, { Toaster } from "react-hot-toast";
 
 const Login = () => {
 
     const { signIn, signInWithGoogle } = useContext(AuthContext)
-    const [error,setError]=useState(null)
+    const [error, setError] = useState(null)
     console.log(error);
-    
+
     const navigate = useNavigate()
     const location = useLocation()
 
@@ -19,26 +20,52 @@ const Login = () => {
 
         signIn(email, password)
             .then(res => {
-                console.log(res);
-                navigate(location?.state? location.state : '/')
+                if(res.user.uid){
+                    toast.success('Successfully Registration Complete ',
+                    {
+                      style: {
+                        borderRadius: '10px',
+                        background: '#333',
+                        color: '#fff',
+                      },
+                    })
+                   }
+              setTimeout(()=>navigate(location?.state ? location.state : '/'),1200)  
 
             })
             .catch(err => {
                 setError(err.message)
+                toast.error(err.message,
+                    {
+
+                        style: {
+                            borderRadius: '10px',
+                            background: '#FF0',
+                            color: '#333',
+                        },
+                    })
             })
     }
 
     const handleGoogle = () => {
         signInWithGoogle()
-       .then(res => {
-            console.log(res);
-            navigate(location?.state? location.state : '/')
+        .then(res => {
+            if(res.user.uid){
+                toast.success('Successfully Registration Complete ',
+                {
+                  style: {
+                    borderRadius: '10px',
+                    background: '#333',
+                    color: '#fff',
+                  },
+                })
+               }
+          setTimeout(()=>navigate(location?.state ? location.state : '/'),1200)  
 
         })
-        .catch(err => {
-           setError(err.message)
-           
-        })
+            .catch(err => {
+                console.log(err);
+            })
     }
 
 
@@ -80,6 +107,7 @@ const Login = () => {
                     </div>
                 </div>
             </div>
+            <Toaster></Toaster>
         </div>
 
     );
