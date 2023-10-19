@@ -34,8 +34,9 @@ const AddProduct = () => {
                       padding:'10px'
                     },
                   })
+                  e.target.reset()
             }
-        e.target.reset()
+       
 
         })
     }
