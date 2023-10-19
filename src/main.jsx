@@ -18,11 +18,13 @@ import PrivateRoute from './components/PrivateRoute';
 import CollectionCard from './components/CollectionCard';
 import Details from './components/Details';
 import UpdateData from './components/UpdateData';
+import ErrorPag from './components/ErrorPag';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <NewRoot></NewRoot>,
+    errorElement:<ErrorPag></ErrorPag>,
     children: [
       {
         path: "/",

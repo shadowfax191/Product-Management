@@ -100,8 +100,7 @@ const MyCart = () => {
 
             </div>
 
-            <Toaster position="top-right"
-                reverseOrder={false}></Toaster>
+            <Toaster ></Toaster>
         </div>
     );
 };

@@ -87,8 +87,7 @@ const Details = () => {
                     </div>
                 </div>
             }
-            <Toaster position="top-right"
-  reverseOrder={false}></Toaster>
+            <Toaster ></Toaster>
         </div>
     );
 };

@@ -133,8 +133,7 @@ const UpdateData = () => {
 
 
             </form>
-            <Toaster  position="top-right"
-  reverseOrder={false}></Toaster>
+            <Toaster ></Toaster>
         </div>
     );
 };

@@ -125,8 +125,7 @@ const AddProduct = () => {
                 </div>
                 <input type="submit" value='Add Product' className="w-full btn btn-primary" />
             </form>
-            <Toaster  position="top-right"
-  reverseOrder={false}></Toaster>
+            <Toaster  ></Toaster>
         </div>
     );
 };
