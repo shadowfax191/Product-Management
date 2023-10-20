@@ -12,7 +12,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
-        fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users')
+        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setCollecTion(data);
@@ -33,7 +33,7 @@ const MyCart = () => {
     const handleDelete = (id) => {
         const backCart = data.find((collect) => collect.cartId == id)
         const newId = backCart._id
-        fetch(`https://express-assignment-amf845f8c-shadowfax12385.vercel.app/cartId/${newId}`, {
+        fetch(`https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/cartId/${newId}`, {
             method: "DELETE",
 
         })

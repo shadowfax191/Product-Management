@@ -15,7 +15,7 @@ const AddProduct = () => {
 
        const myData={name, photo, type, price, rating,brandName,description};
         console.log(myData);
-        fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users',{
+        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users',{
             method:"POST",
             headers:{
                 "content-Type":'application/json'

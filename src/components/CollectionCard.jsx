@@ -7,7 +7,7 @@ const CollectionCard = () => {
     const [collections, setCollecTion] = useState([])
 
     useEffect(() => {
-        fetch('https://express-assignment-amf845f8c-shadowfax12385.vercel.app/users')
+        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setCollecTion(data);
