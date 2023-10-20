@@ -12,7 +12,7 @@ const AddProduct = () => {
          const brandName= e.target.select.value
          const description=e.target.description.value
 
-
+// fff
        const myData={name, photo, type, price, rating,brandName,description};
         console.log(myData);
         fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users',{
