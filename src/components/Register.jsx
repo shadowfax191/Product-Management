@@ -6,6 +6,7 @@ import auth from "./Firebase/firebase";
 import { updateProfile } from "firebase/auth";
 
 const Register = () => {
+    window.scrollTo(0, 0);
 
     const {createUser}=useContext(AuthContext)
 

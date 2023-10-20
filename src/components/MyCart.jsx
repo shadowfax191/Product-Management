@@ -4,6 +4,7 @@ import { useLoaderData } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 const MyCart = () => {
+    window.scrollTo(0, 0)
     const { user } = useContext(AuthContext)
     const data = useLoaderData()
     const [collections, setCollecTion] = useState([])
@@ -12,7 +13,7 @@ const MyCart = () => {
 
 
     useEffect(() => {
-        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users')
+        fetch('https://express-assignment-psi.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setCollecTion(data);
@@ -33,7 +34,7 @@ const MyCart = () => {
     const handleDelete = (id) => {
         const backCart = data.find((collect) => collect.cartId == id)
         const newId = backCart._id
-        fetch(`https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/cartId/${newId}`, {
+        fetch(`https://express-assignment-psi.vercel.app/cartId/${newId}`, {
             method: "DELETE",
 
         })

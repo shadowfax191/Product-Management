@@ -3,11 +3,12 @@ import { Link, useParams } from "react-router-dom";
 import Slider from "./Slider";
 
 const CollectionCard = () => {
+    window.scrollTo(0, 0)
     const { title } = useParams([])
     const [collections, setCollecTion] = useState([])
 
     useEffect(() => {
-        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users')
+        fetch('https://express-assignment-psi.vercel.app/users')
             .then(res => res.json())
             .then(data => {
                 setCollecTion(data);

@@ -1,7 +1,7 @@
 import toast, { Toaster } from "react-hot-toast";
 
 const AddProduct = () => {
-
+    window.scrollTo(0, 0)
     const handleSubmit = (e) => {
         e.preventDefault()
         const name = e.target.name.value
@@ -9,36 +9,36 @@ const AddProduct = () => {
         const type = e.target.type.value
         const price = e.target.price.value
         const rating = e.target.rating.value
-         const brandName= e.target.select.value
-         const description=e.target.description.value
+        const brandName = e.target.select.value
+        const description = e.target.description.value
 
-// fff
-       const myData={name, photo, type, price, rating,brandName,description};
+        // fff
+        const myData = { name, photo, type, price, rating, brandName, description };
         console.log(myData);
-        fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users',{
-            method:"POST",
-            headers:{
-                "content-Type":'application/json'
+        fetch('https://express-assignment-psi.vercel.app/users', {
+            method: "POST",
+            headers: {
+                "content-Type": 'application/json'
             },
-            body:JSON.stringify(myData)
+            body: JSON.stringify(myData)
 
         })
-        .then(res =>res.json())
-        .then(data=>{
-            if(data.acknowledged){
-                toast.success('Successfully Added to Database',{
-                    style: {
-                      borderRadius: '10px',
-                      background: '#333',
-                      color: '#fff',
-                      padding:'10px'
-                    },
-                  })
-                  e.target.reset()
-            }
-       
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    toast.success('Successfully Added to Database', {
+                        style: {
+                            borderRadius: '10px',
+                            background: '#333',
+                            color: '#fff',
+                            padding: '10px'
+                        },
+                    })
+                    e.target.reset()
+                }
 
-        })
+
+            })
     }
     return (
         <div >

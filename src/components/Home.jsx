@@ -6,6 +6,7 @@ import Top from "./Top";
 
 
 const Home = () => {
+    window.scrollTo(0, 0)
     return (
         <div className="max-w-7xl mx-auto " >
            <Banner></Banner>

@@ -4,6 +4,7 @@ import Footer from "./Footer";
 import { useState } from "react";
 import DarkModeToggle from "react-dark-mode-toggle";
 const NewRoot = () => {
+    window.scrollTo(0, 0)
 
     const [theme, setTheme] = useState('light')
 

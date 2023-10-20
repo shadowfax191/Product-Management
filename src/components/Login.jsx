@@ -4,7 +4,7 @@ import { AuthContext } from "./AuthProvider/AuthProdiver";
 import toast, { Toaster } from "react-hot-toast";
 import { FcGoogle } from 'react-icons/fc';
 const Login = () => {
-
+    window.scrollTo(0, 0)
     const { signIn, signInWithGoogle } = useContext(AuthContext)
     const [error, setError] = useState(null)
     console.log(error);

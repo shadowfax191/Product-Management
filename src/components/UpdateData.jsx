@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 
 
 const UpdateData = () => {
+    window.scrollTo(0, 0)
     const data = useLoaderData()
      
     const handleUpdate=(e)=>{
@@ -16,7 +17,7 @@ const UpdateData = () => {
          const description=e.target.description.value
        const myData={name, photo, type, price, rating,brandName,description};
        
-       fetch(`https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/users/${data._id}`,{
+       fetch(`https://express-assignment-psi.vercel.app/users/${data._id}`,{
         method:'PUT',
         headers:{
             "content-Type":'application/json'

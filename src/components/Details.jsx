@@ -5,6 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 
 
 const Details = () => {
+    window.scrollTo(0, 0)
     const data = useLoaderData([])
     const { id } = useParams()
 
@@ -17,7 +18,7 @@ const Details = () => {
     const handleCart = () => {
        
         if(counts===1){
-            fetch('https://express-assignment-8wfg1qrc4-shadowfax12385.vercel.app/cartId', {
+            fetch('https://express-assignment-psi.vercel.app/cartId', {
             method: "POST",
             headers: {
                 "content-Type": 'application/json'
