@@ -1,8 +1,13 @@
-# React + Vite
+Live link: https://entertainment-brand-shop.web.app/
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+About my projects:
+1. In navbar there is login button if user loged in the button will changed o logout and besides there will be a photo of user and his/her name.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2. In brand card section if a user user press it it redirect a route that contain the 3 slider ads based on the brands, diffrent brands have diff slider ads.
+
+3. In my cart, the data will depends on users to users. if contains the users info and product info. so, the product will be diffrent for diffrent users.
+
+4. In the update section the product can be updated by the users once they log in.
+
+5. If there is no data on brand section, if will give users a chance to add the product.
