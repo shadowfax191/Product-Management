@@ -4,10 +4,28 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/icons8-entertainment-64 (1).png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Happy Hour Delights</title>
+    <title>Siam Helmet Invoice</title>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Disable right-click
+      document.addEventListener('contextmenu', (event) => event.preventDefault());
+
+      // Disable specific key combinations
+      document.addEventListener('keydown', (event) => {
+        if (
+          event.key === "F12" || // F12
+          (event.ctrlKey && event.shiftKey && event.key === "I") || // Ctrl+Shift+I
+          (event.ctrlKey && event.shiftKey && event.key === "J") || // Ctrl+Shift+J
+          (event.ctrlKey && event.key === "U") // Ctrl+U
+        ) {
+          event.preventDefault();
+          return false;
+        }
+      });
+    </script>
+    
   </body>
 </html>

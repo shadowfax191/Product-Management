@@ -76,6 +76,13 @@ const Login = () => {
 
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <div className="text-center ">
+                        
+              <img
+                className="w-36 mx-auto"
+                src="https://i.ibb.co/Ry5s6x5/7e82bec4-66a6-4bdf-b1b2-6612f913aa0d-removebg-preview.png"
+                alt="logo"
+              />
+           
                             <h1 className="text-5xl font-bold md:py-5">Log in now!</h1>
                         </div>
                         <form onSubmit={handleSubmit} className="card-body">
@@ -97,13 +104,7 @@ const Login = () => {
                             </div>
 
                         </form>
-                        <div className="px-8">
-                            <p>Do not have an account? <Link to='/register' className="text-purple-700 text-center font-medium">Register here</Link> </p>
-                            <p className="text-xl text-purple-700 text-center font-semibold">OR</p>
-                            <div className="form-control my-4 ">
-                                <button onClick={handleGoogle} className="btn btn-primary text-2xl"> <FcGoogle></FcGoogle> </button>
-                            </div>
-                        </div>
+                      
                     </div>
                 </div>
             </div>
